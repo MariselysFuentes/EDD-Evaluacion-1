@@ -1,0 +1,72 @@
+package edd_evaluacion1;
+//@mariselys
+import java.util.Scanner;
+
+public class EDD_Evaluacion1 {
+    
+    public static void main(String[] args) {
+          Scanner n= new Scanner(System.in);
+          //EJERCICIO 1
+          int M_1[][],x,y; //MATRICES A UTILIZAR
+          int M_2[][],a,b;
+          int R_1[][],c,d;
+          int R_2[][],e,f; 
+          int M_3[][],g,h;
+          
+          System.out.println("Introduzca el numero de filas de las matrices:");
+          x = n.nextInt();
+          System.out.println("Introduzca el numero de columnas de las matrices:");
+          y = n.nextInt();
+          System.out.println("La longitud de las matrices es de: ["+x+"]"+"["+y+"]");
+          
+          a=0; b=0; c=0; d=0; e=0; f=0;g=0;h=0; //INICIALIZACION DE LAS OTRAS FILAS Y COLUMNAS
+          a+=x;
+          b+=y;
+          c+=x;
+          d+=y;
+          e+=x;
+          f+=y;
+          g+=x; 
+          h+=y;
+
+          M_1= new int[x][y]; //MATRICES 
+          M_2= new int[a][b];
+          R_1= new int[c][d];
+          R_2= new int[e][f];
+          M_3= new int[g][h];
+          
+        int i;
+        int j;
+          for (i=0; i<M_1.length; i++ ){//LLENADO DE MATRICES CON NUMEROS ALEATORIOS
+              for (j=0; j<M_1.length; j++){
+                  M_1[i][j]= (int) (Math.random()*10);
+             }
+        }
+           for (i=0; i<M_2.length; i++ ){
+              for (j=0; j<M_2.length; j++){
+                  M_2[i][j]= (int) (Math.random()*10);
+             }
+        }
+            for (i=0; i<M_3.length; i++ ){
+              for (j=0; j<M_3.length; j++){
+                  M_3[i][j]= (int) (Math.random()*10);
+             } 
+        }
+           for (i=0; i<c; i++ ){//SUMA DE MATRICES 1 Y 2
+              for (j=0; j<d; j++){
+                  R_1[i][j]= M_1[i][j]+ M_2[i][j];
+             }  
+        }
+           for (i=0; i<e; i++ ){//MULTIPLICACION DEL RESULTADO CON LA MATRIZ 3
+              for (j=0; j<f; j++){
+                R_2[i][j]  = R_1[i][j]* M_3[i][j];
+             }
+        }
+           for (i=0; i<e; i++ ){//RESLTADO DE LA MULTIPLICACION
+              for (j=0; j<f; j++){
+                  System.out.println(R_2[i][j] );
+              }
+                             System.out.println("");
+           }
+    }
+}
